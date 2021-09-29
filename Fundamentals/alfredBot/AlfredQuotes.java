@@ -7,12 +7,8 @@ public class AlfredQuotes {
         return "Hello, lovely to see you. How are you?";
     }
 
-    public String guestGreeting(String name) {
-        // YOUR CODE HERE
-       System.out.println("Hello, " + name + ". Lovely to see you.");
-
-            return name;
-//        return "place holder for guest greeting return string";
+    public String guestGreeting(String name, String dayPeriod) {
+        return String.format("Good %s, %s. Lovely to see you.", dayPeriod, name);
     }
 
     public String dateAnnouncement() {
@@ -22,9 +18,17 @@ public class AlfredQuotes {
         return "Current date is: " + date;
     }
 
-    public String respondBeforeAlexis(String conversation) {
-        // YOUR CODE HERE
-        return "for snarky response return string";
+    public String answeringBeforeAlexis(String phrase) {
+
+        if(phrase.indexOf("Alexis") > -1) {
+            return "She's really of no help. What can I get for you?";
+        }
+
+        if (phrase.indexOf("Alfred") > -1) {
+            return "At your service, naturally. How may I be of assistance?";
+        }
+
+        return "Right. And with that I shall retire.";
     }
 
     // NINJA BONUS
