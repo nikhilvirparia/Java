@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Fundamentals/First_Java_Program" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Fundamentals/Greetings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Fundamentals/Cafe_Business_Logic" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Fundamentals/Alfred Bot" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Fundamentals/BankAccount" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Fundamentals/Cafe Java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
