@@ -9,8 +9,8 @@ public class CafeJava {
 
         // Menu variables (add yours below)
         double mochaPrice = 3.5;
-        double dripCoffee = 6.8;
-        double latte = 8.9;
+        double dripCoffee = 6.0;
+        double latte = 9.0;
         double cappuccino = 9.0;
 
         // Customer name variables (add yours below)
@@ -42,15 +42,16 @@ public class CafeJava {
         }
 
         // Sam just ordered 2 lattes, print the message to display their total first
-
+        System.out.println(customer2 + displayTotalMessage + (latte * 2));
         if( isReadyOrder2 ) {
-            System.out.println(customer2 + displayTotalMessage + (latte * 2));
+            System.out.println(customer2 + readyMessage);
         } else {
             System.out.println(customer2 + pendingMessage);
 
         }
 
-        System.out.println("");
+        //Jimmy was charged for the coffee but had ordered latte
+        System.out.println(customer3 + displayTotalMessage + (latte - dripCoffee));
 
 
 
