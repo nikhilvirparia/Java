@@ -37,6 +37,7 @@ public class Bank {
             accountBalance -= withdraw;
         }
     }
+
     // GetSavingsBalance
     public double getSavingsBalance() {
         return savingsBalance;
@@ -62,9 +63,5 @@ public class Bank {
     public double getAccountBalance() {
         return accountBalance;
     }
-
-
-
-
 
 }
