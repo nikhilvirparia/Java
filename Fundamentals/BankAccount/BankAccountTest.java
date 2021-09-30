@@ -12,6 +12,7 @@ public class BankAccountTest {
         System.out.println(newaccount.getCheckingBalance());
         System.out.println(newaccount.getSavingsBalance());
         System.out.println(newaccount.getAccountBalance());
+
     }
 
 

@@ -13,8 +13,8 @@ public class Bank {
     public Bank(double checkingBalance, double savingsBalance ) {
         this.checkingBalance = checkingBalance;
         this.savingsBalance = savingsBalance;
-        this.totalAccounts++;
-        this.accountBalance = checkingBalance + savingsBalance;
+        totalAccounts++;
+        accountBalance = checkingBalance + savingsBalance;
     }
 
     // GetcheckingBalance
@@ -36,6 +36,19 @@ public class Bank {
             checkingBalance -= withdraw;
             accountBalance -= withdraw;
         }
+    }
+
+
+    public static int getTotalAccounts() {
+        return totalAccounts;
+    }
+
+    public static void setTotalAccounts(int totalAccounts) {
+        Bank.totalAccounts = totalAccounts;
+    }
+
+    public static void setAccountBalance(double accountBalance) {
+        Bank.accountBalance = accountBalance;
     }
 
     // GetSavingsBalance
