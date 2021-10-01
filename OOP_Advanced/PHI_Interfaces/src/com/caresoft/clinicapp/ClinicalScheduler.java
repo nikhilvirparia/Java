@@ -10,7 +10,18 @@ public class ClinicalScheduler implements PHIAdminCompliant{
     private HashSet<Physician> doctors;
     private ArrayList<Appointment> appointments;
     private ArrayList<String> ePHIBreaches; // this class's version of security incidents
-        // TO DO: Constructor
+
+    // TO DO: Constructor
+
+    public ClinicalScheduler() {}
+
+    public ClinicalScheduler(ArrayList<AdminUser> adminUsers, HashSet<Physician> doctors,
+                             ArrayList<Appointment> appointments, ArrayList<String> ePHIBreaches) {
+        this.adminUsers = adminUsers;
+        this.doctors = doctors;
+        this.appointments = appointments;
+        this.ePHIBreaches = ePHIBreaches;
+    }
 
     public void newIncident(Date incidentDate, Integer userID, String notes) {
         String report = String.format(
@@ -36,17 +47,9 @@ public class ClinicalScheduler implements PHIAdminCompliant{
 
     @Override
     public ArrayList<String> reportSecurityIncidents() {
-        return null;
+        return ePHIBreaches;
     }
     // TO-DO: add Setters and Getters
-
-
-    public ClinicalScheduler(ArrayList<AdminUser> adminUsers, HashSet<Physician> doctors, ArrayList<Appointment> appointments, ArrayList<String> ePHIBreaches) {
-        this.adminUsers = adminUsers;
-        this.doctors = doctors;
-        this.appointments = appointments;
-        this.ePHIBreaches = ePHIBreaches;
-    }
 
     public ArrayList<AdminUser> getAdminUsers() {
         return adminUsers;

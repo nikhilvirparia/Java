@@ -3,16 +3,10 @@ package com.caresoft.clinicapp;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class AdminUser extends User implements PHICompliantUser, PHIAdminCompliant{
+public class AdminUser extends User implements PHICompliantUser, PHIAdminCompliant {
     private Integer employeeID;
     private String role;
     private ArrayList<String> securityIncidents;
-
-    public AdminUser(Integer employeeID, String role) {
-        this.employeeID = employeeID;
-        this.role = role;
-        securityIncidents = new ArrayList<>();
-    }
 
     public void newIncident(String notes) {
         String report = String.format(
@@ -21,7 +15,35 @@ public class AdminUser extends User implements PHICompliantUser, PHIAdminComplia
         );
         securityIncidents.add(report);
     }
+    public void authIncident() {
+        String report = String.format(
+                "Datetime Submitted: %s \n,  ID: %s\n Notes: %s \n",
+                new Date(), this.id, "AUTHORIZATION ATTEMPT FAILED FOR THIS USER"
+        );
+        securityIncidents.add(report);
+    }
 
+    @Override
+    public boolean assignPin(int pin) {
+        //Pin must be 6 digits or more.
+        if (pin > 99999) {
+            setPin(pin);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isAuthorized(Integer confirmedAuthID) {
+        // Checks the ids and returns true or false as expected
+        if (getId().equals(confirmedAuthID)) {  //compares the actual value
+            authIncident();
+            return true;
+        }
+        return false;
+    }
+
+    // Getter and Setter
     public Integer getEmployeeID() {
         return employeeID;
     }
@@ -46,26 +68,20 @@ public class AdminUser extends User implements PHICompliantUser, PHIAdminComplia
         this.securityIncidents = securityIncidents;
     }
 
-    public void authIncident() {
-        String report = String.format(
-                "Datetime Submitted: %s \n,  ID: %s\n Notes: %s \n",
-                new Date(), this.id, "AUTHORIZATION ATTEMPT FAILED FOR THIS USER"
-        );
-        securityIncidents.add(report);
-    }
-
     @Override
     public ArrayList<String> reportSecurityIncidents() {
-        return null;
+        return securityIncidents;
     }
 
     @Override
-    public boolean assignPin(int pin) {
-        return false;
+    public void printSecurityIncidents() {
+        PHIAdminCompliant.super.printSecurityIncidents();
     }
 
     @Override
-    public boolean isAuthorized(Integer confirmedAuthID) {
-        return false;
+    public boolean adminQATest(ArrayList<String> expectedIncidents) {
+        return PHIAdminCompliant.super.adminQATest(expectedIncidents);
     }
+
+
 }

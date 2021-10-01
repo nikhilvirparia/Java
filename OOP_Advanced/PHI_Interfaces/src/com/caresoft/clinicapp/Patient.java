@@ -1,9 +1,9 @@
 package com.caresoft.clinicapp;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Date;
 
-public class Patient extends User implements PHIAdminCompliant {
+public class Patient extends User implements PHICompliantUser {
 
     private String firstName;
     private String lastName;
@@ -17,6 +17,20 @@ public class Patient extends User implements PHIAdminCompliant {
 
     // TO DO: Constructor
 
+    public Patient() {}
+
+    public Patient(String firstName, String lastName,
+                   Physician primaryCarePhysician, ArrayList<Integer> currentPrescriptionsByRX,
+                   int providerCode, int memberNumber, PatientRecord medicalHistory) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.primaryCarePhysician = primaryCarePhysician;
+        this.currentPrescriptionsByRX = currentPrescriptionsByRX;
+        this.providerCode = providerCode;
+        this.memberNumber = memberNumber;
+        this.medicalHistory = medicalHistory;
+    }
+
     public boolean requestAppointment(Date date, Physician doctor) {
         boolean successfullyAdded = false;
         // you see existing code to find and schedule an appointment
@@ -27,15 +41,30 @@ public class Patient extends User implements PHIAdminCompliant {
         this.medicalHistory.getCharts().add(notes);
     }
 
-    public Patient(String firstName, String lastName, Physician primaryCarePhysician, ArrayList<Integer> currentPrescriptionsByRX, int providerCode, int memberNumber, PatientRecord medicalHistory) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.primaryCarePhysician = primaryCarePhysician;
-        this.currentPrescriptionsByRX = currentPrescriptionsByRX;
-        this.providerCode = providerCode;
-        this.memberNumber = memberNumber;
-        this.medicalHistory = medicalHistory;
+    @Override
+    public boolean assignPin(int pin) {
+       // Must be a valid, exactly 4-digit long pin,
+        if(pin > 9999 || pin < 1000) {
+            return false;
+        }
+        // must not be 1234 or 4321
+        if (pin == 1234 || pin == 4321) {
+            return false;
+        }
+        return true;
+
     }
+
+    @Override
+    public boolean isAuthorized(Integer confirmedAuthID) {
+        // Checks the ids and returns true or false as expected
+        if (getId().equals(confirmedAuthID))  //compares the actual value
+            return true;
+        return false;
+
+    }
+
+    // TO DO: Setters & Getters
 
     public String getFirstName() {
         return firstName;
@@ -92,11 +121,4 @@ public class Patient extends User implements PHIAdminCompliant {
     public void setMedicalHistory(PatientRecord medicalHistory) {
         this.medicalHistory = medicalHistory;
     }
-
-    @Override
-    public ArrayList<String> reportSecurityIncidents() {
-        return null;
-    }
-
-    // TO DO: Setters & Getters
 }
