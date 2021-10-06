@@ -15,23 +15,30 @@
     <!-- for Bootstrap CSS -->
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
     <!-- YOUR own local CSS -->
-    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="./mystyle.css"/>
     <!-- For any Bootstrap that uses JS or jQuery-->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <title>Show</title>
+
 </head>
 <body>
 
-        <h1> Here's Your Omikuji! </h1>
-        <h3> In <c:out value="${number}"></c:out> years, you will
-            live in <c:out value="${cname}"></c:out> with
-            <c:out value="${name}"></c:out> as your roommate, <c:out value="${hobby}"></c:out>
-            for a living. The next time you see a <c:out value="${living}"></c:out>, you will have
-            good luck. Also, <c:out value="${description}"></c:out>.
-        </h3>
+        <h1 style="text-align: center"> Here's Your Omikuji! </h1>
+        <div id="container">
+            <div class="box box1">
+                <h3> In <c:out value="${number}"></c:out> years, you will
+                    live in <c:out value="${cname}"></c:out> with
+                    <c:out value="${name}"></c:out> as your roommate, <c:out value="${hobby}"></c:out>
+                    for a living. The next time you see a <c:out value="${living}"></c:out>, you will have
+                    good luck. Also, <c:out value="${description}"></c:out>.
+                </h3>
 
-        <a href="/omikuji">Go back</a>
+                <a href="/omikuji">Go back</a>
+            </div>
+
+        </div>
+
 
 </body>
 </html>

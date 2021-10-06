@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+p { margin: 0; padding: 0; padding: 10px; }
+
+#container {
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#container .box {
+    display: inline-block;;
+    /* position: relative; */
+    border: 1px solid black;
+    height: 50%;
+    margin: 2px 0;
+}
+
+#container .box1 {
+    width: 66%;
+}
