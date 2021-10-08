@@ -12,7 +12,7 @@ public class ExpenseService {
 
     @Autowired
     ExpenseRepository expenseRepository;
-
+//New
     // Method to find all the Pokebook
     public List<Expense> allpoke() {
         return expenseRepository.findAll();
