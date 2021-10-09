@@ -12,12 +12,15 @@ public class ExpenseService {
 
     @Autowired
     ExpenseRepository expenseRepository;
-//New
+
+    public Expense createExpense(Expense expense) {
+        return expenseRepository.save(expense);
+
+    }
+
     // Method to find all the Pokebook
     public List<Expense> allpoke() {
         return expenseRepository.findAll();
     }
-
-
 
 }

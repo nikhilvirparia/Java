@@ -21,12 +21,11 @@ public class Expense {
     private String expenseName;
 
     @NotNull
-    @Size(min = 5, max = 200, message = "Vendor must not be blank")
+    @Size(min = 5, max = 200, message = "Vendor must between 5 and 200 character")
     private String vendor;
 
     @NotNull
-    @Min(value = 100, message = "Amount should not be blank")
-    private Integer amount;
+    private Double amount;
 
     @NotNull
     @Size(min = 5, max = 200, message = "Description must not be blank")
@@ -44,7 +43,7 @@ public class Expense {
 
     // Create a Constructor using the fields
 
-    public Expense(String expenseName, String vendor, Integer amount, String description) {
+    public Expense(String expenseName, String vendor, Double amount, String description) {
         this.expenseName = expenseName;
         this.vendor = vendor;
         this.amount = amount;
@@ -70,11 +69,11 @@ public class Expense {
         this.expenseName = expenseName;
     }
 
-    public Integer getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

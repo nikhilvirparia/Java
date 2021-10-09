@@ -59,12 +59,12 @@
         <p>
             <form:label path="vendor">Vendor</form:label>
             <form:errors path="vendor"/>
-            <form:textarea path="vendor"/>
+            <form:input path="vendor"/>
         </p>
         <p>
             <form:label path="amount">Amount</form:label>
             <form:errors path="amount"/>
-            <form:input type="number" path="amount"/>
+            <form:input type="number" step=".01" path="amount"/>
         </p>
         <p>
             <form:label path="description">Description</form:label>
