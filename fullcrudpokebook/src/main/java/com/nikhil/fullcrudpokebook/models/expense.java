@@ -8,16 +8,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-@Entity
-@Table(name="expenses")
+@Entity // Connects to MySQl
+@Table(name="expenses") // Send it to the expenses table
 public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 5, max = 200, message = "Name must not be blank")
+    @NotNull // If this is null we don't except it
+    @Size(min = 5, max = 200, message = "Name must not be blank") // Min 5 and max 200 has to be between this values
     private String expenseName;
 
     @NotNull
@@ -32,8 +32,8 @@ public class Expense {
     private String description;
 
     // This will not allow the createdAt column to be updated after creation
-    @Column(updatable=false)
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @Column(updatable=false) // Column does not get updated
+    @DateTimeFormat(pattern="yyyy-MM-dd") // Year month and day
     private Date createdAt;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
@@ -42,7 +42,6 @@ public class Expense {
     public Expense() {}
 
     // Create a Constructor using the fields
-
     public Expense(String expenseName, String vendor, Double amount, String description) {
         this.expenseName = expenseName;
         this.vendor = vendor;
@@ -50,9 +49,7 @@ public class Expense {
         this.description = description;
     }
 
-
     //Getter and setter
-
     public Long getId() {
         return id;
     }

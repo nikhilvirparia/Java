@@ -13,14 +13,33 @@ public class ExpenseService {
     @Autowired
     ExpenseRepository expenseRepository;
 
-    public Expense createExpense(Expense expense) {
-        return expenseRepository.save(expense);
-
-    }
-
     // Method to find all the Pokebook
-    public List<Expense> allpoke() {
+    public List<Expense> allExpense() {
         return expenseRepository.findAll();
     }
 
+    // Method to createExpense
+    public Expense createExpense(Expense expense) {
+        return expenseRepository.save(expense);
+    }
+
+    // Delete
+    public void deleteExpense(Long id) {
+        expenseRepository.deleteById(id);
+    }
+
+    // Get one Expense
+    public Expense getOneExpense (Long id) {
+        Optional<Expense> optionalExpense = expenseRepository.findById(id);
+        if(optionalExpense.isPresent()) {
+            return optionalExpense.get();
+        } else {
+            return null;
+        }
+    }
+
+    // Edit the expense
+    public Expense updateOneExpense(Expense expense) {
+       return expenseRepository.save(expense);
+    }
 }

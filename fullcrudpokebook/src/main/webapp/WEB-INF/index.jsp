@@ -28,8 +28,8 @@
 <div class="container"> <!-- Beginning of Container -->
 
     <h1>PokeBook</h1>
-    <a href="/expenses"> Expense details </a>
-    <a href="/expenses/edit"> Edit Expense </a>
+
+
 
     <table>
         <tbody>
@@ -37,12 +37,24 @@
             <th> &nbsp;&nbsp;Expense </th>
             <th> Vendor </th>
             <th> Amount </th>
+            <th> Actions </th>
         </tr>
         <c:forEach var="i" items="${expenses}">
             <tr>
-                <td> <c:out value="${i.expenseName}"></c:out></td>
+                <td>  <a href="/expenses/${i.id}">  <c:out value="${i.expenseName}"></c:out> </a></td>
                 <td> <c:out value="${i.vendor}"></c:out></td>
                 <td> <c:out value="${i.amount}"></c:out></td>
+
+                <td>
+                    <div style="display: flex; gap: 10px;" >
+                    <a href="/expenses/edit/${i.id}"> Edit </a>
+                    <form action="/delete/${i.id}" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="submit" value="Delete">
+                    </form>
+                    </div>
+                </td>
+
             </tr>
         </c:forEach>
         </tbody>
@@ -50,7 +62,7 @@
 
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <h1>Track an Expense:</h1>
-    <form:form action="/pokes" method="post" modelAttribute="expense">
+    <form:form action="/creatExpense" method="post" modelAttribute="expense">
         <p>
             <form:label path="expenseName">Expense Name</form:label>
             <form:errors path="expenseName"/>

@@ -17,6 +17,7 @@ public class BooksApi {
 
     @RequestMapping("/api/books")
     public List<Book> index() {
+
         return bookService.allBooks();
     }
 
@@ -30,7 +31,7 @@ public class BooksApi {
         return bookService.createBook(book);
     }
 
-    // Show all the movies
+    // Show all the books
     @RequestMapping("/api/books/{id}")
     public Book show(@PathVariable("id") Long id) {
         Book book = bookService.findBook(id);

@@ -13,6 +13,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true" %>
+
+<!-- additional tags to add -->
+<%@ page isErrorPage="true" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,9 +31,35 @@
 <body>
 <div class="container"> <!-- Beginning of Container -->
 
-    <h1> Edit Expense </h1>
-
     <a href="/"> Go back </a>
+
+
+    <h1> Edit Expense </h1>
+    <form:form action="/editExpense/${editExpense.id}" method="post" modelAttribute="editExpense">
+        <input type="hidden" name="_method" value="put">
+        <p>
+            <form:label path="expenseName">Expense Name</form:label>
+            <form:errors path="expenseName"/>
+            <form:input path="expenseName"/>
+        </p>
+        <p>
+            <form:label path="vendor">Vendor</form:label>
+            <form:errors path="vendor"/>
+            <form:input path="vendor"/>
+        </p>
+        <p>
+            <form:label path="amount">Amount</form:label>
+            <form:errors path="amount"/>
+            <form:input type="number" step=".01" path="amount"/>
+        </p>
+        <p>
+            <form:label path="description">Description</form:label>
+            <form:errors path="description"/>
+            <form:textarea path="description"/>
+        </p>
+        <input type="submit" value="Submit"/>
+    </form:form>
+
 
 
 </div> <!-- End of Container -->

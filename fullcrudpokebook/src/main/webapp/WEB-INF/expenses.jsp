@@ -28,8 +28,36 @@
 <div class="container"> <!-- Beginning of Container -->
 
     <h1> Expense Details </h1>
-
     <a href="/"> Go back </a>
+    <br>
+    <br>
+    <table>
+        <tbody>
+
+        <tr>
+            <td> Expense name: </td>
+            <td> <c:out value="${expense.expenseName}"></c:out></td>
+        </tr>
+
+        <tr>
+            <td> Expense Description: </td>
+            <td> <c:out value="${expense.description}"></c:out></td>
+        </tr>
+
+        <tr>
+            <td> Vendor: </td>
+            <td> <c:out value="${expense.vendor}"></c:out></td>
+        </tr>
+
+        <tr>
+            <td> Amount Spent: </td>
+            <td> <c:out value="${expense.amount}"></c:out></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
 
 
 </div> <!-- End of Container -->
