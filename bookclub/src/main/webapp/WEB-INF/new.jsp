@@ -38,20 +38,23 @@
 
         <form:form action="/books" method="post" modelAttribute="book">
             <form:hidden path = "user" value = "${user.id}" />
-            <form:errors path="user" class="text-danger" />
+
+            <form:errors path="title" class="text-danger"/>
             <p>
                 <form:label path="title">Title</form:label>
-                <form:errors path="title"/>
+
                 <form:input path="title"/>
             </p>
+            <form:errors path="author" class="text-danger"/>
             <p>
                 <form:label path="author">Author</form:label>
-                <form:errors path="author"/>
+
                 <form:input path="author"/>
             </p>
+            <form:errors path="thoughts" class="text-danger"/>
             <p>
                 <form:label path="thoughts">Thoughts</form:label>
-                <form:errors path="thoughts"/>
+
                 <form:textarea path="thoughts"/>
             </p>
             <input type="submit" value="Submit"/>

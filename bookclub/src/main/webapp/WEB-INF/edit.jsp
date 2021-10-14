@@ -43,9 +43,9 @@
                 <form:label path="title">Title</form:label>
                 <form:input path="title"/>
             </p>
-            <p style="color:red;"><form:errors path="Author"/></p>
+            <p style="color:red;"><form:errors path="author"/></p>
             <p>
-                <form:label path="Author">Authorr</form:label>
+                <form:label path="Author">Author</form:label>
                 <form:input path="Author"/>
             </p>
             <p style="color:red;"><form:errors path="thoughts"/></p>

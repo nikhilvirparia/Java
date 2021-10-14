@@ -17,7 +17,7 @@ public class Book {
     private Long id;
 
     @NotNull
-    @Size(min = 1, message="Title must no be blank.")
+    @Size(min = 1, message="Title must not be blank.")
     private String title;
 
     @NotNull
@@ -25,7 +25,7 @@ public class Book {
     private String author;
 
     @NotNull
-    @Size(min = 1,  message="Fill the void with your thoughts.")
+    @Size(min = 1,  message="Thoughts must be not be blank")
     private String thoughts;
 
     // This will not allow the createdAt column to be updated after creation
@@ -35,7 +35,6 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
 
-//    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
