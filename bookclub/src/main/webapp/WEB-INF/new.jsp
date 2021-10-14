@@ -33,7 +33,7 @@
     <div style="margin:15px;">
         <div style="margin:15px;display:flex; justify-content:space-between;">
             <h1>Add a book to your shelf!</h1>
-            <a href="/home">back to the shelves</a>
+            <a href="/books">back to the shelves</a>
         </div>
 
         <form:form action="/books" method="post" modelAttribute="book">

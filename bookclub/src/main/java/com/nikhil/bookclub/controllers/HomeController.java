@@ -52,18 +52,6 @@ public class HomeController {
         return "redirect:/books";
     }
 
-    @RequestMapping("/books")
-    public String dashboard(Model model, HttpSession session) {
-        if(session.getAttribute("user_id") !=  null) {
-            Long user_id = (Long)session.getAttribute("user_id");
-            User user = userServ.getById(user_id);
-            model.addAttribute("user", user);
-
-            return"dashboard.jsp";
-        }else {
-           return "redirect:/";
-        }
-    }
 
     //End Logout button
     @GetMapping("/logout")

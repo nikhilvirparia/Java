@@ -33,7 +33,7 @@
     <div style="margin:15px;">
         <div style="display:flex;">
             <h1>Edit Book</h1>
-            <a style="margin-left:auto;"href = "/home">back to shelf</a>
+            <a style="margin-left:auto;"href = "/books">back to shelf</a>
         </div>
         <form:form action="/books/${book.id}" method="post" modelAttribute="book">
             <input type="hidden" name="_method" value="put">

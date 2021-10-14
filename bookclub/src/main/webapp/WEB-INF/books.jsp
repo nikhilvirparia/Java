@@ -34,7 +34,7 @@
     <div style="margin:15px">
         <div style="margin:15px;display:flex; justify-content:space-between;">
             <h1><c:out value="${book.getTitle()}"></c:out></h1>
-            <a href="/home">back to the shelves</a>
+            <a href="/books">back to the shelves</a>
         </div>
         <div style="margin:15px">
             <p><c:out value="${book.getUser().getUserName()} read ${book.getTitle()} by ${book.getAuthor()}."></c:out></p>
@@ -45,8 +45,14 @@
         </div>
         <c:if test = "${book.user.equals(user)}">
             <a href="/edit/${book.getId()}">edit</a>
+            <form action="/delete/${book.id}" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete">
+            </form>
         </c:if>
     </div>
+
+
 
     <a href="/logout">Logout</a>
 </div> <!-- End of Container -->

@@ -25,7 +25,7 @@ public class BookController {
    @Autowired
     private UserService userService;
 
-    @RequestMapping("/home")
+    @RequestMapping("/books")
     public String index(Model model, HttpSession session) {
         if(session.getAttribute("user_id") == null)
             return "redirect:/";
@@ -65,7 +65,7 @@ public class BookController {
             return "new.jsp";
         } else {
             bookService.createBook(book);
-            return "redirect:/home";
+            return "redirect:/books";
         }
     }
 
@@ -86,7 +86,13 @@ public class BookController {
             return "edit.jsp";
         } else {
             bookService.updateBook(book);
-            return "redirect:/home/";
+            return "redirect:/books";
         }
+    }
+
+    @RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
+    public String destroy(@PathVariable("id") Long id) {
+        bookService.deleteBook(id);
+        return "redirect:/home";
     }
 }
