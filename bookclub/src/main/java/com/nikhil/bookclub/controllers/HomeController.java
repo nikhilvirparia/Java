@@ -59,9 +59,9 @@ public class HomeController {
             User user = userServ.getById(user_id);
             model.addAttribute("user", user);
 
-            return"books.jsp";
+            return"dashboard.jsp";
         }else {
-            return "redirect:/";
+           return "redirect:/";
         }
     }
 

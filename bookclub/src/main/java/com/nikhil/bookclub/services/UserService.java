@@ -61,6 +61,15 @@ public class UserService {
         }
     }
 
+    public User findUser(Long id) {
+        Optional<User> optionalUser = userRepo.findById(id);
+        if(optionalUser.isPresent()) {
+            return optionalUser.get();
+        } else {
+            return null;
+        }
+    }
+
 
 }
 
