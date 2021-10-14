@@ -52,8 +52,6 @@
         </c:if>
     </div>
 
-
-
     <a href="/logout">Logout</a>
 </div> <!-- End of Container -->
 </body>

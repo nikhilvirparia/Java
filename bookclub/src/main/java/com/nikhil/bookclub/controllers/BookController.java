@@ -22,7 +22,7 @@ public class BookController {
 
     @Autowired
     private BookService bookService;
-   @Autowired
+    @Autowired
     private UserService userService;
 
     @RequestMapping("/books")
@@ -80,6 +80,8 @@ public class BookController {
         model.addAttribute("book", book);
         return "edit.jsp";
     }
+
+    // Update the form
     @RequestMapping(value="/books/{id}", method=RequestMethod.PUT)
     public String update(@Valid @ModelAttribute("book") Book book, BindingResult result) {
         if (result.hasErrors()) {
@@ -93,6 +95,6 @@ public class BookController {
     @RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
     public String destroy(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
-        return "redirect:/home";
+        return "redirect:/books";
     }
 }
