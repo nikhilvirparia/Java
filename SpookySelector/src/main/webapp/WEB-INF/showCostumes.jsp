@@ -17,7 +17,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Title Here</title>
     <!-- Bootstrap -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -26,17 +26,14 @@
 </head>
 <body>
 <div class="container"> <!-- Beginning of Container -->
-
-    <h1> Welcome <c:out value="${user.userName}"></c:out></h1>
-
     <a href="/logout">Logout</a>
+    <a href="/costume/chooser">Dashboard</a>
 
-    <h4> Trust us to pick your costume, </h4>
-    <h1> If you Dare </h1>
-
-    <form action="/costume/chooser" method="POST">
-    <input type="submit" value="Pick Costume">
-    </form>
+    <h1> Ideas for a ${costumeName} </h1>
+    <a href="/costume/chooser"> Costume Chooser </a>
+    <c:forEach var="i" begin="1" end="6">
+        <img src="/resources/images/${costumeName}/O${i}.jpeg" alt="Images">
+    </c:forEach>
 
 </div> <!-- End of Container -->
 </body>

@@ -2,6 +2,7 @@
     Team: Spooky
     Date: 10/21/21
 --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -17,7 +18,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Title Here</title>
     <!-- Bootstrap -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -27,15 +28,17 @@
 <body>
 <div class="container"> <!-- Beginning of Container -->
 
-    <h1> Welcome <c:out value="${user.userName}"></c:out></h1>
-
     <a href="/logout">Logout</a>
+    <a href="/costume/chooser">Dashboard</a>
+    <h1>This Year you will be a....</h1>
+    <h2> ${costumeName} </h2>
 
-    <h4> Trust us to pick your costume, </h4>
-    <h1> If you Dare </h1>
+    <form action="/costume/picture" method="POST">
+        <input type="submit" value="Show me ideas">
+    </form>
 
     <form action="/costume/chooser" method="POST">
-    <input type="submit" value="Pick Costume">
+         <input type="submit" value="Pick another Costume">
     </form>
 
 </div> <!-- End of Container -->

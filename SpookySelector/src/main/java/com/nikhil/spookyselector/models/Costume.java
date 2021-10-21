@@ -17,14 +17,15 @@ public class Costume {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Select the name
     @NotEmpty(message="Spooky Name is required!")
     private String name;
 
+    // List of images
     @NotNull
     @ElementCollection
     private List<String> images;
 
-    
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")

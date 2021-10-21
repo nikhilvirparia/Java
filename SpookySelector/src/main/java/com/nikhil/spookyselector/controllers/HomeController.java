@@ -1,6 +1,5 @@
 package com.nikhil.spookyselector.controllers;
 
-
 import com.nikhil.spookyselector.models.LoginUser;
 import com.nikhil.spookyselector.models.User;
 import com.nikhil.spookyselector.services.UserService;
@@ -29,6 +28,7 @@ public class HomeController {
         return "index.jsp";
     }
 
+    // Register
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute("newUser") User newUser,
                            BindingResult result, Model model, HttpSession session) {
@@ -38,9 +38,10 @@ public class HomeController {
             return "index.jsp";
         }
         session.setAttribute("user_id", newUser.getId());
-        return "redirect:/home";
+        return "redirect:/costume/chooser";
     }
 
+    // Login
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin,
                         BindingResult result, Model model, HttpSession session) {
@@ -50,10 +51,11 @@ public class HomeController {
             return "index.jsp";
         }
         session.setAttribute("user_id", user.getId());
-        return "redirect:/home";
+        return "redirect:/costume/chooser";
     }
 
-    @RequestMapping("/home")
+    // Goes to the dashboard page
+    @RequestMapping("/costume/chooser")
     public String dashboard(Model model, HttpSession session) {
         if(session.getAttribute("user_id") !=  null) {
             Long user_id = (Long)session.getAttribute("user_id");

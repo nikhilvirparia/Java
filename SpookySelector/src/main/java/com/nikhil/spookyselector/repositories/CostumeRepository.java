@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CostumeRepository extends CrudRepository <Costume, Long>{
+public interface CostumeRepository extends CrudRepository <Costume, Long> {
 
     List<Costume> findAll();
 

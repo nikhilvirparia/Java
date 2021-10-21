@@ -1,10 +1,8 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: nikhilvirparia
-  Date: 10/13/21
-  Time: 5:27 PM
-  To change this template use File | Settings | File Templates.
+    Team: Spooky
+    Date: 10/21/21
 --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
