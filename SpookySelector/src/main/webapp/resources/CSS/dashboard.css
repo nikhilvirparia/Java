@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Henny Penny', cursive;
+
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background-image: url("halloween.png") ;
+    background-size: cover;
+}
+
+h1 {
+    color: #f06805;
+    display: flex;
+    gap: 65%;
+    text-shadow: 2px 2px black;
+    font-size: 60px;
+}
+
+h4 {
+    color: #f06805;
+    font-size: 100px;
+    text-shadow: 2px 2px black;
+}
+
+.bigger {
+    font-size: 100px;
+}
+
+.logout {
+    justify-content: flex-end;
+    align-items: center;
+    background-color: orange;
+    color: rebeccapurple;
+    font-size: 35px;
+}
+
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px black;
+}
+
+.button {
+    width: 650px;
+    font-size: 100px;
+    margin-top: 50px;
+    background-color: black;
+    color: #f06805;
+    border-color: rgba(131, 130, 130, 0.73);
+    border-width: 10px;
+}
+
+.midwrapper {
+    margin-top: 75px;
+}

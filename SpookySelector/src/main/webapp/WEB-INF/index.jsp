@@ -18,20 +18,29 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login and Registration</title>
+    <title>Team Spooky</title>
     <!-- Bootstrap -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/resources/CSS/style.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Qahiri&display=swap" rel="stylesheet">
+
 </head>
 <body>
-<%--<div style="background-color: rebeccapurple;">--%>
-<div class="container"> <!-- Beginning of Container -->
+<div class="container1"> <!-- Beginning of Container -->
 
+    <h1> Spooky Selector </h1>
 
     <!-- Div to flex the column -->
-    <div style="margin:15px;display:flex;gap:100px;">
+    <div class="form">
     <form:form action="/register" method="post" modelAttribute="newUser">
         <div class="form-group">
             <label>User Name:</label>
@@ -53,7 +62,7 @@
             <form:password path="confirm" class="form-control" />
             <form:errors path="confirm" class="text-danger" />
         </div>
-        <input type="submit" value="Register" class="btn btn-primary" />
+        <input type="submit" value="Register" class="button" />
     </form:form>
 
     <form:form action="/login" method="post" modelAttribute="newLogin">
@@ -67,10 +76,10 @@
             <form:password path="password" class="form-control" />
             <form:errors path="password" class="text-danger" />
         </div>
-        <input type="submit" value="Login" class="btn btn-success" />
+        <input type="submit" value="Login" class="login" />
     </form:form>
-
     </div>
+    <!--</div> -->
 
 </div> <!-- End of Container -->
 </body>

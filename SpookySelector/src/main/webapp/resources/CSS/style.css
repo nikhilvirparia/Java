@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Henny Penny', cursive;
+}
+
+.form {
+    margin:20px;
+    display:flex;
+    gap:100px;
+}
+
+body {
+    background-image: url("scary.jpeg") ;
+}
+
+h1 {
+    color: white;
+    font-size: 75px;
+    text-shadow: 2px 2px black;
+}
+
+label {
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+}
+
+.button {
+    background-color: rebeccapurple;
+    color: orange;
+    font-size: 35px;
+}
+
+.login {
+    background-color: orange;
+    color: rebeccapurple;
+    font-size: 35px;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    background-color: orange;
+}
